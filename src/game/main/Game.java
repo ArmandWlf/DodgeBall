@@ -2,51 +2,18 @@ package game.main;
 
 import java.awt.Canvas;
 
-public class Game extends Canvas implements Runnable {
-	
-	/**
-	 * 
-	 */
+public class Game extends Canvas {
+
 	private static final long serialVersionUID = 852753996046178928L;
-	
-	public static final int WIDTH = 1080, HEIGHT = WIDTH / 12 * 9;
-	
-	private Thread thread;
-	private boolean running = false;
-	
+
+	public static final int WIDTH = 1080, HEIGHT = 720;
+
 	public Game() {
 		new Window(WIDTH, HEIGHT, "DodgeBall", this);
 	}
 
+	public void start() {
 
-	public synchronized void start() {
-		
-		thread = new Thread(this);
-		thread.start();
-		running = true;
-		
 	}
-	
-	public synchronized void stop() {
-		
-		try {
-			thread.join();
-			running = false;
-		
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
-	
-	public void run(){
-			
-		}
-		
-	
 
-	
-	public static void main(String args[]) {
-		new Game();
-		
-	}
 }
